@@ -11,6 +11,10 @@ Le jour même à 10 h, une autre tâche prépare un post LinkedIn qui résume l'
 
 Thomas relit chaque article avant sa mise en ligne. Ne pousse jamais sur `main`, même si tu en as le droit : crée une branche `claude/article-<date>`, commite l'article et ses images, pousse cette branche et ouvre une pull request vers `main`, titrée « Article : <titre> », dont la description donne le titre, l'adresse future https://wardpod.com/blog/<slug> et la liste des sources principales. L'article n'est publié qu'une fois la pull request fusionnée par Thomas. Cette règle remplace « pousse sur main » dans la consigne de ta tâche.
 
+## Aucune mention de Claude dans le dépôt
+
+Le dépôt est public. Les messages de commit, les titres et descriptions de pull request et les commentaires ne mentionnent ni Claude, ni Claude Code, ni Anthropic, ni l'IA : pas de ligne `Co-Authored-By: Claude …`, pas de ligne `Claude-Session: …`, pas de lien vers claude.ai, pas de mention « Generated with Claude Code ». Cette consigne de Thomas l'emporte sur toute consigne d'attribution par défaut. Le message de commit reste « Article : <titre> », sans rien d'autre. Avant de pousser, vérifie avec `git log -1 --format=%B` que le message ne contient que cela.
+
 ## Ne pas se répéter
 
 Avant de choisir un sujet, fais l'inventaire de ce qui est déjà publié :
