@@ -7,6 +7,10 @@ Trois articles par semaine, deux formats qui cohabitent :
 
 Le jour même à 10 h, une autre tâche prépare un post LinkedIn qui résume l'article du jour et renvoie vers lui. Ces consignes complètent celles de chaque tâche et priment en cas de contradiction sur l'organisation de la semaine.
 
+## Publication : toujours par pull request
+
+Thomas relit chaque article avant sa mise en ligne. Ne pousse jamais sur `main`, même si tu en as le droit : crée une branche `claude/article-<date>`, commite l'article et ses images, pousse cette branche et ouvre une pull request vers `main`, titrée « Article : <titre> », dont la description donne le titre, l'adresse future https://wardpod.com/blog/<slug> et la liste des sources principales. L'article n'est publié qu'une fois la pull request fusionnée par Thomas. Cette règle remplace « pousse sur main » dans la consigne de ta tâche.
+
 ## Ne pas se répéter
 
 Avant de choisir un sujet, fais l'inventaire de ce qui est déjà publié :
@@ -14,6 +18,8 @@ Avant de choisir un sujet, fais l'inventaire de ce qui est déjà publié :
 ```sh
 for f in articles/*.md; do echo "$f | $(grep -m1 '^title:' "$f")"; grep -oE 'CVE-[0-9]{4}-[0-9]+' "$f" | sort -u | tr '\n' ' '; echo; done
 ```
+
+Les articles en attente de relecture comptent aussi : récupère les branches des pull requests ouvertes (`git fetch origin 'refs/heads/claude/*:refs/remotes/origin/claude/*'`) et lis leurs fichiers `articles/*.md` avant de choisir.
 
 Règles pour les articles sur un sujet (mercredi, samedi) :
 
